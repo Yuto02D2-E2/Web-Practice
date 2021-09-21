@@ -19,14 +19,23 @@
 
         <br><br>
 
-        <h2>MDNチュートリアルの数字あてゲーム</h2>
-        <label for="field">input your guess(1 - 100): </label>
-        <input type="text" id="field" class="field">
-        <input type="submit" value="check" class="submit">
-        <div class="result">
-            <p class="guess"></p>
-            <p class="last_res"></p>
-            <p class="hi_low"></p>
+        <h2>チュートリアルの数字あてゲーム</h2>
+        <div class="guessing_game">
+            <label for="field">input your guess(1 - 100): </label>
+            <input type="text" id="field" class="field">
+            <input type="submit" value="check" class="submit">
+            <div class="result">
+                <p class="guess"></p>
+                <p class="last_res"></p>
+                <p class="hi_low"></p>
+            </div>
+        </div>
+
+        <br><br>
+
+        <h2>Canvas API test</h2>
+        <div class="canvas_test">
+            <canvas id="canvas"></canvas>
         </div>
 
         <br><br>
@@ -38,13 +47,42 @@
 
         <br><br>
 
-        <h2>チュートリアルのバカ話ジェネレーター</h2>
-
+        <h2>バカ話ジェネレーター</h2>
+        <div class="silly_story_gen">
+            <div>
+                <label for="customname">enter custom name: </label>
+                <input type="text" id="customname" placeholder="">
+            </div>
+            <div>
+                <label for="us">US</label>
+                <input type="radio" id="us" name="usuk" value="us" checked>
+                <label for="uk">UK</label>
+                <input type="radio" id="uk" name="usuk" value="uk">
+            </div>
+            <div>
+                <button class="randomize">generate random story</button>
+                <button class="clear">clear</button>
+            </div>
+            <p class="story"></p>
+        </div>
 
 
         <script src="./index.js"></script>
-        <!-- jsの読み込みは最後に行わないとエラーが出る
-        (headerで読み込むと，html上のnullを参照してしまう)から/body直前に読み込む -->
+        <!--
+        jsの読み込みは最後に行わないとエラーが出る(headerで読み込むと，jsがhtml上のnullを参照してしまう)
+        から/body直前に読み込む
+
+        もしくは，header内に
+        <script defer src="./index.js"></script>
+        このようにdeferを付けて記述しても良い
+
+        ちなみに，asyncというものもある
+        <script async src="./index.js"></script>
+
+        deferとasyncの使い分け
+        defer: スクリプトが他のスクリプトなどに依存している(読み込む順序が大切な)時
+        async: スクリプトに依存関係が無い時
+        -->
     </body>
 
 </html>
