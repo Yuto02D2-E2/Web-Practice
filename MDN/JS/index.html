@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <title>JS practice</title>
+    </head>
+
+    <body>
+        <h1>JavaScriptのおべんきょう</h1>
+        <p>
+            まずは<a href="https://developer.mozilla.org/ja/docs/Learn/JavaScript/">MDN</a>で触ってみる <br>
+            ちなみに，MDNとはMozilla Developer Networkの略 <br>
+            JSは駆け出しエンジニアとかのゴミ記事であふれてるけど，MDNは良質な情報が沢山あるので好き
+        </p>
+
+        <br><br>
+
+        <h2>MDNチュートリアルの数字あてゲーム</h2>
+        <label for="field">input your guess(1 - 100): </label>
+        <input type="text" id="field" class="field">
+        <input type="submit" value="check" class="submit">
+        <div class="result">
+            <p class="guess"></p>
+            <p class="last_res"></p>
+            <p class="hi_low"></p>
+        </div>
+
+        <br><br>
+
+        <h2>alertとpromptのテスト</h2>
+        <button class="greeting">
+            <font size="5">greeting</font>
+        </button>
+
+        <br><br>
+
+        <h2>チュートリアルのバカ話ジェネレーター</h2>
+
+
+
+        <script src="./index.js"></script>
+        <!-- jsの読み込みは最後に行わないとエラーが出る
+        (headerで読み込むと，html上のnullを参照してしまう)から/body直前に読み込む -->
+    </body>
+
+</html>
