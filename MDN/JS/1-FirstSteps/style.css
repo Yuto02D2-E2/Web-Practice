@@ -7,8 +7,10 @@ label {
     font-weight: bold;
 }
 
-div {
+div.silly_story_gen {
     padding-bottom: 20px;
+    width: 350px;
+    margin: 0 auto;
 }
 
 input[type="text"] {
@@ -16,7 +18,7 @@ input[type="text"] {
     width: 150px;
 }
 
-p {
+p.story {
     background: #FFC125;
     color: #5E2612;
     padding: 10px;

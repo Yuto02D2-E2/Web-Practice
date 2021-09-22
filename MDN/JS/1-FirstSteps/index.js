@@ -17,13 +17,14 @@ const hi_low = document.querySelector(".hi_low");
 
 const submit = document.querySelector(".submit");
 const field = document.querySelector(".field");
+const restart = document.querySelector(".restart");
 
 let cnt = 1;
-let reset_btn;
+let reset_btn = null;
 
 // jsファイルがこの場所まで読み込まれた時点で入力フォーム(field)にフォーカスする
 // ちなみに，focus()はhtmlのinputタグに対応するメソッド
-// field.focus();
+field.focus();
 
 // alert("guessing game start!!!");
 
@@ -44,7 +45,7 @@ function check() {
         game_end();
     } else {
         last_res.textContent = "wrong answer";
-        last_res.style.backgroundColor = "red";
+        last_res.style.backgroundColor = "yellow";
         if (user_guess < random_num) { hi_low.textContent = "too small"; }
         else if (random_num < user_guess) { hi_low.textContent = "too big"; }
     }
@@ -53,32 +54,39 @@ function check() {
     field.focus();
 }
 
-// clickというイベントが発生したときにcheck関数を実行する「イベントリスナー」
+// submit要素に対してclickというイベントが発生したときにcheck関数を実行する「イベントリスナー」
 submit.addEventListener("click", check);
 
 function game_end() {
     field.disabled = true;
     submit.disabled = true;
+    restart.disabled = true;
+    let game = document.getElementById("guessing_game");
     reset_btn = document.createElement("button");
     reset_btn.textContent = "start new game";
-    document.body.appendChild(reset_btn);
+    game.appendChild(reset_btn);
     reset_btn.addEventListener("click", reset_game);
 }
 
+restart.addEventListener("click", reset_game);
 function reset_game() {
     cnt = 1;
 
-    const reset_paras = document.querySelectorAll(".res_paras p");
+    const reset_paras = document.querySelectorAll(".last_res");
     for (let i = 0; i < reset_paras.length; i++) {
         reset_paras[i].textContent = "";
     }
 
-    reset_btn.parentNode.removeChild(reset_btn);
+    if (reset_btn != null) {
+        reset_btn.parentNode.removeChild(reset_btn);
+        reset_btn = null;
+    }
 
     field.disabled = false;
     field.value = "";
     field.focus();
     submit.disabled = false;
+    restart.disabled = false;
 
     last_res.style.backgroundColor = "white";
     random_num = Math.floor(Math.random() * 100) + 1;
@@ -106,7 +114,7 @@ greeting.onclick = function () {
 
 /* バカ話ジェネレーター */
 const customName = document.getElementById('customname');
-customName.focus();
+// customName.focus();
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
 

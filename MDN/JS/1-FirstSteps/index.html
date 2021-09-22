@@ -10,7 +10,7 @@
     </head>
 
     <body>
-        <h1>JavaScriptのおべんきょう</h1>
+        <h1>MDN/LearningArea/JavaScriptの第一歩</h1>
         <p>
             まずは<a href="https://developer.mozilla.org/ja/docs/Learn/JavaScript/">MDN</a>で触ってみる <br>
             ちなみに，MDNとはMozilla Developer Networkの略 <br>
@@ -20,7 +20,7 @@
         <br><br>
 
         <h2>チュートリアルの数字あてゲーム</h2>
-        <div class="guessing_game">
+        <div class="guessing_game" id="guessing_game">
             <label for="field">input your guess(1 - 100): </label>
             <input type="text" id="field" class="field">
             <input type="submit" value="check" class="submit">
@@ -29,6 +29,7 @@
                 <p class="last_res"></p>
                 <p class="hi_low"></p>
             </div>
+            <input type="submit" value="restart" class="restart">
         </div>
 
         <br><br>
